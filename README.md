@@ -1,1 +1,1 @@
-# Clair.ai Android Version
+# Claire.ai Android Version

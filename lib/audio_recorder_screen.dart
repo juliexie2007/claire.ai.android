@@ -6,7 +6,7 @@ import 'dart:async';
 import 'dart:io';
 
 class AudioRecorderScreen extends StatefulWidget {
-  const AudioRecorderScreen({Key? key}) : super(key: key);
+  const AudioRecorderScreen({super.key});
   
   @override
   _AudioRecorderScreenState createState() => _AudioRecorderScreenState();
@@ -152,7 +152,7 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
         File file = File(_recordingPath!);
         if (file.existsSync()) {
           int fileSize = file.lengthSync();
-          _updateDebug("Recording saved: ${fileSize} bytes");
+          _updateDebug("Recording saved: $fileSize bytes");
           setState(() {
             _isRecording = false;
             _hasRecording = fileSize > 1000; // Need at least 1KB for valid audio
@@ -187,7 +187,7 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
       }
       
       int fileSize = file.lengthSync();
-      _updateDebug("File exists, size: ${fileSize} bytes");
+      _updateDebug("File exists, size: $fileSize bytes");
       
       if (fileSize < 1000) {
         _updateDebug("File too small - likely empty recording");

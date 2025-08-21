@@ -1,4 +1,4 @@
-name: audio_recorder_app
+name: claireai
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -35,11 +35,14 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_sound: ^9.28.0
-  permission_handler: ^12.0.1
+  permission_handler: ^11.0.0
   path_provider: ^2.1.2
   flutter_svg: ^2.2.0
   google_fonts: ^6.1.0
   http: ^1.2.1
+  vosk_flutter_2: ^1.0.5
+  record: ^6.1.0
+  rename: ^3.1.0
 
 
 dev_dependencies:

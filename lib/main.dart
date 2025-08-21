@@ -12,7 +12,7 @@ import 'screens/goal_details_screen.dart';
 // import 'screens/smart_insights_screen.dart';
 // import 'screens/suggestions_screen.dart';
 // import 'screens/settings_screen.dart';
-import 'audio_recorder_screen.dart';
+import 'screens/audio_recorder_screen.dart';
 
 void main() {
   runApp(MyApp());

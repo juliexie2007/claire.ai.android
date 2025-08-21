@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {
+  const IntroScreen({super.key});
+
   @override
   _IntroScreenState createState() => _IntroScreenState();
 }
@@ -11,7 +13,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFF7FAFF),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
@@ -37,7 +39,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF1D1D1F),
+                  color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
@@ -46,7 +48,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF1D1D1F),
+                  color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
@@ -55,7 +57,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF1D1D1F),
+                  color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
@@ -144,7 +146,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       child: const Icon(
                         Icons.check,
                         color: Colors.white,
-                        size: 24,
+                        size: 35,
                       ),
                     ),
                   ),

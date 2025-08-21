@@ -1,85 +1,159 @@
 import 'package:flutter/material.dart';
 
-class PersonalizedDashboardScreen extends StatelessWidget {
-  const PersonalizedDashboardScreen({Key? key}) : super(key: key);
+class PersonalizedDashboardScreen extends StatefulWidget {
+  const PersonalizedDashboardScreen({super.key});
+
+  @override
+  State<PersonalizedDashboardScreen> createState() => _PersonalizedDashboardScreenState();
+}
+
+class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScreen> {
+  // Track which areas are selected
+  Map<String, bool> selectedAreas = {
+    'Health & Wellness': true,
+    'Time Management': true,
+    'Work & Email': false,
+    'Learning': true,
+    'Home & Finances': false,
+    'Relationships & Communication': false,
+    'Other': false,
+  };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
-      body: Center( // CENTER THE CARD
-        child: Container(
-          width: 280,
-          height: 360,
-          margin: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.08),
-                blurRadius: 20,
-                offset: Offset(0, 4),
+      backgroundColor: const Color(0xFFF7FAFF),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Back button
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: const Icon(
+                  Icons.arrow_back,
+                  size: 24,
+                  color: Colors.black87,
+                ),
+              ),
+              
+              const SizedBox(height: 40),
+              
+              // Title
+              const Text(
+                "Personalized\nDashboard",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF1A1A1A),
+                  height: 1.2,
+                ),
+              ),
+              
+              const SizedBox(height: 40),
+              
+              // Subtitle
+              const Text(
+                "What areas would\nyou like Claire to help\nwith?",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xFF666666),
+                  height: 1.4,
+                ),
+              ),
+              
+              const SizedBox(height: 40),
+              
+              // Areas list
+              Expanded(
+                child: ListView(
+                  children: selectedAreas.keys.map((area) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: _buildAreaItem(area, selectedAreas[area]!),
+                    );
+                  }).toList(),
+                ),
+              ),
+              
+              const SizedBox(height: 32),
+              
+              // Continue button
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/goals'),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    Text(
+                      'Continue',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 20,
+                      color: Colors.black87,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
-          child: Padding(
-            padding: EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 20),
-                
-                // Title
-                Text(
-                  "Personalized\nDashboard",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF1A1A1A),
-                    height: 1.3,
-                  ),
-                ),
-                
-                SizedBox(height: 12),
-                
-                // Subtitle
-                Text(
-                  "What goals would\nyou like Claire to help\nyou achieve?\n\nSetting Goals\nDaily Check-ins\nProgress Tracking\nCustom\nRecommendations\n\nDashboard\nComing Soon",
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Color(0xFF666666),
-                    height: 1.4,
-                  ),
-                ),
-                
-                Spacer(),
-                
-                // Continue button
-                GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, '/recorder'),
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF2196F3),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      'Continue',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAreaItem(String title, bool isSelected) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedAreas[title] = !selectedAreas[title]!;
+        });
+      },
+      child: Row(
+        children: [
+          // Custom checkbox
+          Container(
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: isSelected ? const Color(0xFF87CEEB) : Colors.transparent,
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(
+                color: isSelected ? const Color(0xFF87CEEB) : const Color(0xFFCCCCCC),
+                width: 2,
+              ),
+            ),
+            child: isSelected
+                ? const Icon(
+                    Icons.check,
+                    size: 16,
+                    color: Colors.white,
+                  )
+                : null,
+          ),
+          
+          const SizedBox(width: 16),
+          
+          // Title text
+          Expanded(
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Color(0xFF1A1A1A),
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

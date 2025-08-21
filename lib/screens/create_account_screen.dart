@@ -1,85 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GoogleLogoPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..style = PaintingStyle.fill;
-    final strokePaint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = size.width * 0.15
-      ..strokeCap = StrokeCap.round;
-    
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.width * 0.35;
-    
-    // Google Blue (top-right)
-    strokePaint.color = const Color(0xFF4285F4);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -1.57, // -90 degrees (12 o'clock)
-      1.57, // 90 degrees
-      false,
-      strokePaint,
-    );
-    
-    // Google Green (bottom-right)  
-    strokePaint.color = const Color(0xFF34A853);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      0, // 0 degrees (3 o'clock)
-      1.57, // 90 degrees
-      false,
-      strokePaint,
-    );
-    
-    // Google Yellow (bottom-left)
-    strokePaint.color = const Color(0xFFFBBC05);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      1.57, // 90 degrees (6 o'clock)
-      1.57, // 90 degrees
-      false,
-      strokePaint,
-    );
-    
-    // Google Red (top-left, with gap)
-    strokePaint.color = const Color(0xFFEA4335);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      3.14, // 180 degrees (9 o'clock)
-      1.2, // Less than 90 degrees to create gap
-      false,
-      strokePaint,
-    );
-    
-    // Draw the "G" in the center
-    final textPainter = TextPainter(
-      text: const TextSpan(
-        text: 'G',
-        style: TextStyle(
-          color: Color(0xFF4285F4),
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
-    textPainter.paint(
-      canvas, 
-      Offset(
-        center.dx - textPainter.width / 2,
-        center.dy - textPainter.height / 2,
-      ),
-    );
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
-
 class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({Key? key}) : super(key: key);
+  const CreateAccountScreen({super.key});
 
   @override
   State<CreateAccountScreen> createState() => _CreateAccountScreenState();
@@ -165,7 +87,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     hintText: 'Name',
                     hintStyle: TextStyle(
                       color: Color(0xFF9E9E9E),
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(
@@ -198,7 +120,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     hintText: 'Email',
                     hintStyle: TextStyle(
                       color: Color(0xFF9E9E9E),
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(
@@ -233,7 +155,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     hintText: 'Password',
                     hintStyle: TextStyle(
                       color: Color(0xFF9E9E9E),
-                      fontSize: 16,
+                      fontSize: 20,
                     ),
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(
@@ -279,15 +201,15 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     // Multicolor Google G logo
                     Image.asset(
                       'assets/images/google.png', // Replace with your Google logo image path
-                      width: 20,
-                      height: 20,
+                      width: 25,
+                      height: 25,
                       fit: BoxFit.contain,
                     ),
                     const SizedBox(width: 12),
                     const Text(
                       'Continue with Google',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                         color: Color(0xFF1A1A1A),
                       ),
                     ),
@@ -314,14 +236,14 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   children: const [
                     Icon(
                       Icons.apple,
-                      size: 20,
+                      size: 35,
                       color: Colors.black,
                     ),
                     SizedBox(width: 12),
                     Text(
                       'Continue with Apple',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 21,
                         color: Color(0xFF1A1A1A),
                       ),
                     ),
@@ -333,7 +255,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               
               // Continue button
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, '/goals'),
+                onTap: () => Navigator.pushNamed(context, '/dashboard'),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [

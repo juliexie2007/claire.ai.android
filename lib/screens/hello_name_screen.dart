@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HelloNameScreen extends StatelessWidget {
-  const HelloNameScreen({Key? key}) : super(key: key);
+  const HelloNameScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,14 +10,14 @@ class HelloNameScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as String? ?? "NAME";
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFF7FAFF),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            icon: const Icon(Icons.arrow_back, color: Color(0xFF4A4949)),
             iconSize: 30,
             onPressed: () {
               Navigator.pop(context);
@@ -94,7 +94,7 @@ class HelloNameScreen extends StatelessWidget {
                   fontFamily: 'Nunito',
                   fontSize: 25,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF4A4A4A),
+                  color: Color(0xFF4A4949),
                   height: 1.5,
                 ),
                 textAlign: TextAlign.center,
@@ -117,11 +117,11 @@ class HelloNameScreen extends StatelessWidget {
                 fontFamily: 'Nunito',
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
-                color: Colors.black87,
+                color: Color(0xFF4A4949),
               ),
             ),
             SizedBox(width: 8),
-            Icon(Icons.arrow_forward, color: Colors.black87, size: 24),
+            Icon(Icons.arrow_forward, color: Color(0xFF4A4949), size: 24),
           ],
         ),
       ),

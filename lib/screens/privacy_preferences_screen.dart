@@ -41,7 +41,7 @@ Widget _buildCheckboxCard({
                   : const Icon(
                       Icons.check,
                       size: 30,        // Adjust check icon size here
-                      color: Color(0xFF666666),
+                      color: Color(0xFF4A4949),
                     ),
             ),
             const SizedBox(width: 16),
@@ -101,7 +101,7 @@ Widget _buildImageCard({
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF374151),
+                  color: Color(0xFF4A4949),
                   height: 1.4,
                 ),
               ),
@@ -119,7 +119,7 @@ Widget _buildImageCard({
   }
 
 class PrivacyPreferencesScreen extends StatefulWidget {
-  const PrivacyPreferencesScreen({Key? key}) : super(key: key);
+  const PrivacyPreferencesScreen({super.key});
 
   @override
   State<PrivacyPreferencesScreen> createState() => _PrivacyPreferencesScreenState();
@@ -136,14 +136,14 @@ class _PrivacyPreferencesScreenState extends State<PrivacyPreferencesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFF7FAFF),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            icon: const Icon(Icons.arrow_back, color: Color(0xFF4A4949)),
             iconSize: 30,
             onPressed: () {
               Navigator.pop(context);
@@ -169,7 +169,7 @@ class _PrivacyPreferencesScreenState extends State<PrivacyPreferencesScreen> {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFF1A1A1A),
+                        color: Color(0xFF4A4949),
                         height: 1.2,
                       ),
                     ),
@@ -235,13 +235,13 @@ class _PrivacyPreferencesScreenState extends State<PrivacyPreferencesScreen> {
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w600,
-                              color: _canContinue ? Colors.black87 : Colors.grey,
+                              color: _canContinue ? Color(0xFF4A4949) : Colors.grey,
                             ),
                           ),
                           const SizedBox(width: 8),
                           Icon(
                             Icons.arrow_forward, 
-                            color: _canContinue ? Colors.black87 : Colors.grey, 
+                            color: _canContinue ? Color(0xFF4A4949) : Colors.grey, 
                             size: 24
                           ),
                         ],
@@ -293,7 +293,7 @@ class _PrivacyPreferencesScreenState extends State<PrivacyPreferencesScreen> {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w400,
-                color: Color(0xFF374151),
+                color: Color(0xFF4A4949),
                 height: 1.4,
               ),
             ),

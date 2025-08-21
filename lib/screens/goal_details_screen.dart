@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GoalDetailsScreen extends StatefulWidget {
-  const GoalDetailsScreen({Key? key}) : super(key: key);
+  const GoalDetailsScreen({super.key});
 
   @override
   State<GoalDetailsScreen> createState() => _GoalDetailsScreenState();
@@ -11,7 +11,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: const Color(0xFFF7FAFF),
       body: Center( // CENTER THE CARD
         child: Container(
           width: 280,
@@ -61,7 +61,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                 
                 // Skip button
                 GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, '/dashboard'),
+                  onTap: () => Navigator.pushNamed(context, '/recorder'),
                   child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 12),

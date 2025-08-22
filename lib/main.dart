@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'SF Pro Display',
+        fontFamily: 'Nunito',
       ),
       home: IntroScreen(), // Start with the intro screen
       debugShowCheckedModeBanner: false,

@@ -20,6 +20,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [ 
               // Back button
               Row(
@@ -35,24 +36,27 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 ],
               ),
               
-              const SizedBox(height: 60),
+              // const SizedBox(height: 10),
               
               // Profile avatar
-              Container(
-                width: 80,
-                height: 80,
-                decoration: const BoxDecoration(
-                  // color: Color(0xFFB3E5FC),
-                  shape: BoxShape.circle,
-                ),
-                child: ClipOval(
-                  child: Image.asset(
-                    'assets/images/profile_pic.png',
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
+              Center(
+                child: Container(
+                  width: 93,
+                  height: 94,
+                  decoration: const BoxDecoration(
+                    // color: Color(0xFFB3E5FC),
+                    shape: BoxShape.circle,
                   ),
-                )
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/profile_pic.png',
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              
               ),
               
               const SizedBox(height: 40),
@@ -60,16 +64,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               // Title
               const Text(
                 "Create your\nClaire account",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 35,
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
               
-              const SizedBox(height: 40),
+              const SizedBox(height: 12),
               
               // Name input field
               Container(
@@ -77,7 +81,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFD0CECD),
                     width: 1,
                   ),
                 ),
@@ -110,7 +114,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFD0CECD),
                     width: 1,
                   ),
                 ),
@@ -144,7 +148,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFD0CECD),
                     width: 1,
                   ),
                 ),
@@ -170,13 +174,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 ),
               ),
               
-              const SizedBox(height: 32),
+              const SizedBox(height: 28),
               
               // "or sign up with" text
               const Text(
                 "or sign up with",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   color: Color(0xFF666666),
                 ),
               ),
@@ -186,30 +190,30 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               // Continue with Google button
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 14),
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 25),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFD0CECD),
                     width: 1,
                   ),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     // Multicolor Google G logo
                     Image.asset(
-                      'assets/images/google.png', // Replace with your Google logo image path
-                      width: 25,
-                      height: 25,
+                      'assets/images/google.png',
+                      width: 28,
+                      height: 28,
                       fit: BoxFit.contain,
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 20),
                     const Text(
                       'Continue with Google',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 23,
                         color: Color(0xFF4A4949),
                       ),
                     ),
@@ -222,28 +226,28 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               // Continue with Apple button
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 14),
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 25),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFD0CECD),
                     width: 1,
                   ),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: const [
                     Icon(
                       Icons.apple,
-                      size: 35,
+                      size: 40,
                       color: Colors.black,
                     ),
-                    SizedBox(width: 12),
+                    SizedBox(width: 20),
                     Text(
                       'Continue with Apple',
                       style: TextStyle(
-                        fontSize: 21,
+                        fontSize: 23,
                         color: Color(0xFF4A4949),
                       ),
                     ),

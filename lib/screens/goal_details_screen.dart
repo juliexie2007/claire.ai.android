@@ -34,7 +34,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                   child: Icon(
                     Icons.arrow_back,
                     color: Color(0xFF4A4949),
-                    size: 24,
+                    size: 30,
                   ),
                 ),
               ),
@@ -59,7 +59,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                       ),
                     ),
                     
-                    SizedBox(height: 32),
+                    SizedBox(height: 45),
                     
                     // Subtitle question
                     Text(
@@ -67,6 +67,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                       style: TextStyle(
                         fontSize: 24,
                         color: Color(0xFF4A4949),
+                        fontWeight: FontWeight.w500,
                         height: 1.5,
                       ),
                     ),
@@ -74,23 +75,30 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                     SizedBox(height: 40),
                     
                     // Goal examples
-                    Text(
-                      "1. Improve self-care",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFF4A4949),
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Text(
+                        "1. Improve self-care",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color(0xFF4A4949),
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
                     
-                    SizedBox(height: 16),
                     
-                    Text(
-                      "2. Exercise 3x / week",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Color(0xFF4A4949),
-                        fontWeight: FontWeight.w500,
+                    SizedBox(height: 16),
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Text(
+                        "2. Exercise 3x / week",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color(0xFF4A4949),
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
                     
@@ -113,6 +121,7 @@ class _GoalDetailsScreenState extends State<GoalDetailsScreen> {
                           hintStyle: TextStyle(
                             fontSize: 20,
                             color: Color(0xFF4A4949),
+                            fontWeight: FontWeight.w400
                           ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(vertical: 16),

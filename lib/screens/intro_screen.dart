@@ -37,8 +37,8 @@ class _IntroScreenState extends State<IntroScreen> {
               const Text(
                 'Hi, I\'m Claire,',
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
                   color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
@@ -46,8 +46,8 @@ class _IntroScreenState extends State<IntroScreen> {
               const Text(
                 'your personalized',
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
                   color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
@@ -55,8 +55,8 @@ class _IntroScreenState extends State<IntroScreen> {
               const Text(
                 'AI assistant.',
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
                   color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
@@ -68,7 +68,7 @@ class _IntroScreenState extends State<IntroScreen> {
               const Text(
                 'Let\'s get to know each other.',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w400,
                   color: Color(0xFF6E6E73),
                   height: 1.3,
@@ -77,7 +77,7 @@ class _IntroScreenState extends State<IntroScreen> {
               const Text(
                 'What\'s your name?',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w400,
                   color: Color(0xFF6E6E73),
                   height: 1.3,
@@ -95,25 +95,25 @@ class _IntroScreenState extends State<IntroScreen> {
                       decoration: const InputDecoration(
                         hintText: 'Enter name',
                         hintStyle: TextStyle(
-                          color: Color(0xFF8E8E93),
-                          fontSize: 16,
+                          color: Color(0xFF4A4949),
+                          fontSize: 20,
                           fontWeight: FontWeight.w400,
                         ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFF3A3A3C), // dark gray
-                            width: 2, // thicker line
+                            color: Color(0xFFADADAD), // dark gray
+                            width: 3, // thicker line
                           ),
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFF3A3A3C), // dark gray
-                            width: 2, // thicker line
+                            color: Color(0xFFADADAD), // dark gray
+                            width: 3, // thicker line
                           ),
                         ),
                       ),
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF1D1D1F),
                       ),
@@ -146,7 +146,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       child: const Icon(
                         Icons.check,
                         color: Colors.white,
-                        size: 35,
+                        size: 36,
+                        weight: 900,
                       ),
                     ),
                   ),

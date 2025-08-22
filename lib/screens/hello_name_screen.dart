@@ -36,12 +36,13 @@ class HelloNameScreen extends StatelessWidget {
               // HELLO text - no longer wrapped in a sized container
               Text(
                 "HELLO, $name!",
-                style: GoogleFonts.nunito(
+                style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF1A1A1A),
+                  color: Color.fromRGBO(0, 0, 0, 0.65),
                   letterSpacing: 3.0,
                 ),
+                
                 textAlign: TextAlign.center,
               ),
 
@@ -91,7 +92,6 @@ class HelloNameScreen extends StatelessWidget {
               const Text(
                 "Claire learns from \nyour habits and routines \nto help optimize your \ndaily life — from \nscheduling to self-care.",
                 style: TextStyle(
-                  fontFamily: 'Nunito',
                   fontSize: 25,
                   fontWeight: FontWeight.w400,
                   color: Color(0xFF4A4949),
@@ -114,7 +114,6 @@ class HelloNameScreen extends StatelessWidget {
             Text(
               "Continue",
               style: TextStyle(
-                fontFamily: 'Nunito',
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 color: Color(0xFF4A4949),

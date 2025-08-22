@@ -20,7 +20,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Column(
-            children: [
+            children: [ 
               // Back button
               Row(
                 children: [
@@ -28,8 +28,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     onTap: () => Navigator.pop(context),
                     child: const Icon(
                       Icons.arrow_back,
-                      size: 24,
-                      color: Colors.black87,
+                      size: 30,
+                      color: Color(0xFF4A4949),
                     ),
                   ),
                 ],
@@ -64,7 +64,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF1A1A1A),
+                  color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
@@ -210,7 +210,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       'Continue with Google',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Color(0xFF1A1A1A),
+                        color: Color(0xFF4A4949),
                       ),
                     ),
                   ],
@@ -244,7 +244,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       'Continue with Apple',
                       style: TextStyle(
                         fontSize: 21,
-                        color: Color(0xFF1A1A1A),
+                        color: Color(0xFF4A4949),
                       ),
                     ),
                   ],
@@ -262,16 +262,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     Text(
                       'Continue',
                       style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black87,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF4A4949),
                       ),
                     ),
                     SizedBox(width: 8),
                     Icon(
                       Icons.arrow_forward,
-                      size: 20,
-                      color: Colors.black87,
+                      size: 24,
+                      color: Color(0xFF4A4949),
                     ),
                   ],
                 ),

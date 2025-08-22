@@ -34,8 +34,8 @@ class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScree
                 onTap: () => Navigator.pop(context),
                 child: const Icon(
                   Icons.arrow_back,
-                  size: 24,
-                  color: Colors.black87,
+                  size: 30,
+                  color: Color(0xFF4A4949),
                 ),
               ),
               
@@ -45,9 +45,9 @@ class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScree
               const Text(
                 "Personalized\nDashboard",
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 35,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF1A1A1A),
+                  color: Color(0xFF4A4949),
                   height: 1.2,
                 ),
               ),
@@ -58,7 +58,7 @@ class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScree
               const Text(
                 "What areas would\nyou like Claire to help\nwith?",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 24,
                   color: Color(0xFF666666),
                   height: 1.4,
                 ),
@@ -89,16 +89,16 @@ class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScree
                     Text(
                       'Continue',
                       style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black87,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF4A4949),
                       ),
                     ),
                     SizedBox(width: 8),
                     Icon(
                       Icons.arrow_forward,
-                      size: 20,
-                      color: Colors.black87,
+                      size: 24,
+                      color: Color(0xFF4A4949),
                     ),
                   ],
                 ),
@@ -147,8 +147,8 @@ class _PersonalizedDashboardScreenState extends State<PersonalizedDashboardScree
             child: Text(
               title,
               style: const TextStyle(
-                fontSize: 16,
-                color: Color(0xFF1A1A1A),
+                fontSize: 19,
+                color: Color(0xFF4A4949),
                 fontWeight: FontWeight.w400,
               ),
             ),

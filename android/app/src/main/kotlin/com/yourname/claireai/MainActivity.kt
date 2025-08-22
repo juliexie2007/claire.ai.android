@@ -1,4 +1,4 @@
-package com.example.audio_recorder_app
+package com.yourname.claireai
 
 import io.flutter.embedding.android.FlutterActivity
 

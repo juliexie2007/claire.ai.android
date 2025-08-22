@@ -1,6 +1,6 @@
 {
-    "name": "audio_recorder_app",
-    "short_name": "audio_recorder_app",
+    "name": "claireai",
+    "short_name": "claireai",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

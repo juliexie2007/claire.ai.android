@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'audio_recorder_screen.dart';
+import 'screens/audio_recorder_screen.dart';
 
 void main() {
   runApp(MyApp());

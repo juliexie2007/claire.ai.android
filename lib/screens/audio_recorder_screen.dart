@@ -414,17 +414,17 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
                           shape: BoxShape.circle,
                           boxShadow: _isInitialized
                               ? [
-                                  BoxShadow(
-                                    color:
-                                        (_isRecording
-                                                ? Colors.red
-                                                : Colors.blue)
-                                            .withOpacity(0.3),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ]
+                            BoxShadow(
+                              color:
+                              (_isRecording
+                                  ? Colors.red
+                                  : Colors.blue)
+                                  .withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
+                            ),
+                          ]
                               : [],
                         ),
                         child: Icon(
@@ -447,30 +447,30 @@ class _AudioRecorderScreenState extends State<AudioRecorderScreen> {
                         height: 80,
                         decoration: BoxDecoration(
                           color:
-                              _hasRecording && !_isRecording && _isInitialized
+                          _hasRecording && !_isRecording && _isInitialized
                               ? (_isPlaying ? Colors.orange : Colors.green)
                               : Colors.grey[300],
                           shape: BoxShape.circle,
                           boxShadow:
-                              _hasRecording && !_isRecording && _isInitialized
+                          _hasRecording && !_isRecording && _isInitialized
                               ? [
-                                  BoxShadow(
-                                    color:
-                                        (_isPlaying
-                                                ? Colors.orange
-                                                : Colors.green)
-                                            .withOpacity(0.3),
-                                    spreadRadius: 2,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ]
+                            BoxShadow(
+                              color:
+                              (_isPlaying
+                                  ? Colors.orange
+                                  : Colors.green)
+                                  .withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
+                            ),
+                          ]
                               : [],
                         ),
                         child: Icon(
                           _isPlaying ? Icons.stop : Icons.play_arrow,
                           color:
-                              _hasRecording && !_isRecording && _isInitialized
+                          _hasRecording && !_isRecording && _isInitialized
                               ? Colors.white
                               : Colors.grey[500],
                           size: 40,

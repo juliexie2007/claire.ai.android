@@ -1,79 +1,84 @@
-import 'dart:async';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
 
-class AudioRecorderService {
-  final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
-  final FlutterSoundPlayer _player = FlutterSoundPlayer();
+class AudioService {
+  FlutterSoundRecorder? _recorder;
+  FlutterSoundPlayer? _player;
   bool _isRecorderInitialized = false;
   bool _isPlayerInitialized = false;
+  String? _recordingPath;
 
+  /// Initialize recorder and player
   Future<void> init() async {
-    await _recorder.openRecorder();
+    _recorder = FlutterSoundRecorder();
+    _player = FlutterSoundPlayer();
+
+    await _recorder!.openRecorder();
     _isRecorderInitialized = true;
 
-    await _player.openPlayer();
+    await _player!.openPlayer();
     _isPlayerInitialized = true;
   }
 
-  /// Start recording audio, returns file path
-  Future<String?> startRecording() async {
-    if (!_isRecorderInitialized) {
-      await init();
-    }
+  /// Dispose resources
+  Future<void> dispose() async {
+    await _recorder?.closeRecorder();
+    _recorder = null;
+    _isRecorderInitialized = false;
 
-    final directory = await getApplicationDocumentsDirectory();
-    final filePath =
-        '${directory.path}/recording_${DateTime.now().millisecondsSinceEpoch}.aac';
+    await _player?.closePlayer();
+    _player = null;
+    _isPlayerInitialized = false;
+  }
 
-    await _recorder.startRecorder(
-      toFile: filePath,
+  /// Start recording
+  Future<void> startRecording() async {
+    if (!_isRecorderInitialized) return;
+
+    final dir = await getApplicationDocumentsDirectory();
+    _recordingPath = '${dir.path}/recording_${DateTime.now().millisecondsSinceEpoch}.aac';
+
+    await _recorder!.startRecorder(
+      toFile: _recordingPath,
       codec: Codec.aacADTS,
     );
-
-    return filePath;
   }
 
-  /// Stop recording and return the file path if it exists
+  /// Stop recording and return file path
   Future<String?> stopRecording() async {
     if (!_isRecorderInitialized) return null;
-
-    final filePath = await _recorder.stopRecorder();
-
-    if (filePath == null) return null;
-
-    final file = File(filePath);
-    if (await file.exists()) {
-      debugPrint("✅ Recording saved: $filePath");
-      return filePath;
-    } else {
-      debugPrint("⚠️ Recording failed to save.");
-      return null;
-    }
+    await _recorder!.stopRecorder();
+    return _recordingPath;
   }
 
-  /// Play a saved recording
-  Future<void> playRecording(String filePath) async {
-    if (!_isPlayerInitialized) {
-      await init();
-    }
+  /// Start playback
+  Future<void> startPlayback() async {
+    if (!_isPlayerInitialized || _recordingPath == null) return;
 
-    final file = File(filePath);
-    if (await file.exists()) {
-      await _player.startPlayer(
-        fromURI: filePath,
-        codec: Codec.aacADTS,
-      );
-    } else {
-      debugPrint("⚠️ Tried to play non-existent file: $filePath");
-    }
+    final file = File(_recordingPath!);
+    if (!file.existsSync()) return;
+
+    await _player!.startPlayer(
+      fromURI: _recordingPath,
+      whenFinished: () {
+        _player?.stopPlayer();
+      },
+    );
   }
 
-  /// Clean up resources
-  void dispose() {
-    _recorder.closeRecorder();
-    _player.closePlayer();
+  /// Stop playback
+  Future<void> stopPlayback() async {
+    if (!_isPlayerInitialized) return;
+    await _player!.stopPlayer();
   }
+
+  /// Check if currently recording
+  bool get isRecording => _recorder?.isRecording ?? false;
+
+  /// Check if currently playing
+  bool get isPlaying => _player?.isPlaying ?? false;
+
+  /// Get last recording path
+  String? get lastRecording => _recordingPath;
 }
